@@ -5,6 +5,6 @@
   <div class="post_content">
      <%= form.text_area :content %>
   </div>
-  <%= form.submit %>
+  <%= form.submit "呟きを保存する", data: {confirm: "本当に保存してもいいですか？"}%>
   <%= link_to "一覧に戻る", posts_path %>
 <% end %>

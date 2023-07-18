@@ -1,17 +1,19 @@
 <h1>呟き一覧</h1>
+<%=link_to "新しく呟く", new_post_path %>
 <%= notice %>
-
 <table>
   <tr>
+  <th>番号</th>
   <th>呟き</th>
   </tr>
 
-<% @posts.each do |post| %>
+<% @posts.each_with_index do |post,index| %>
   <tr>
+     <td><%= index + 1 %></td>
      <td><%= post.content %></td>
-     <td><%= link_to "確認する", post_path(post.id) %></td>
-     <td><%= link_to "編集する", edit_post_path(post.id) %></td>
-     <td><%= link_to "削除する", post_path(post.id) %></td>
+     <td><%= link_to "確認する", post_path(post.id), data: {confirm: "呟き #{index + 1} を確認しますか？"} %></td>
+     <td><%= link_to "編集する", edit_post_path(post.id), data: {confirm: "呟き #{index + 1} を編集しますか？"} %></td>
+     <td><%= link_to "削除する", post_path(post.id), data: {confirm: "呟き #{index + 1} を本当に削除してもよろしいですか？"}, method: :delete %></td>
   </tr>
-  <% end %>
+<% end %>
 </table>

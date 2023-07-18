@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     return render:new if params[:back]
     return redirect_to posts_path, notice: "呟きを保存しました！" if @post.save
-    return render:new
+    render:new
   end
 
   def edit

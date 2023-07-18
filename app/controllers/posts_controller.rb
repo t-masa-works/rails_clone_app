@@ -9,10 +9,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.new(post_params)
     return render:new if params[:back]
     return redirect_to posts_path, notice: "呟きを保存しました！" if @post.save
-    render:new
+    return render:new
   end
 
   def edit
@@ -21,6 +21,12 @@ class PostsController < ApplicationController
   def update
     return redirect_to posts_path, notice: "呟きを編集しました！" if @post.update(post_params)
     render:new
+  end
+
+  def confirm
+    @post = Post.new(post_params)
+    render:new if @post.invalid?
+
   end
 
   def destroy
@@ -40,4 +46,5 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
+
 end

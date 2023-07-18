@@ -1,1 +1,16 @@
 <h1>呟き一覧</h1>
+
+<table>
+  <tr>
+  <th>呟き</th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+     <td><%= post.content %></td>
+     <td><%= rink_to "呟きを確認する" %></td>
+     <td><%= rink_to "呟きを編集する" %></td>
+     <td><%= rink_to "呟きを削除する" %></td>
+  </tr>
+  <% end %>
+</table>

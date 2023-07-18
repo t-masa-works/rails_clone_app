@@ -10,10 +10,16 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    @post.save
+    return render:new if params[:back]
+    return redirect_to posts_path, notice: "呟きを保存しました！" if @post.save
+    return render:new
   end
 
   def edit
+  end
+
+  def update
+    return redirect_to posts_path, notice: "呟きを編集しました！" if @post.update(post_params)
   end
 
   def destroy

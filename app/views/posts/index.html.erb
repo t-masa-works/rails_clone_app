@@ -1,20 +1,20 @@
 <% content_for(:title, 'これまでのツブヤイター') %>
-<h1>呟き一覧</h1>
-<%=link_to "新しく呟く", new_post_path %>
-<p><%= notice %></p>
+<h1>ツブヤキ一覧</h1>
+<p style="text-align: center"><%=link_to "新しくツブヤク", new_post_path %></p>
+<h2><%= notice %></h2>
 <table>
   <tr>
      <th>番号</th>
-     <th>呟き</th>
+     <th>ツブヤキ</th>
   </tr>
 
 <% @posts.each_with_index do |post,index| %>
   <tr>
      <td><%= index + 1 %></td>
      <td><%= post.content %></td>
-     <td><%= link_to "確認する", post_path(post.id), data: {confirm: "#{index + 1} の呟きを確認しますか？"} %></td>
-     <td><%= link_to "編集する", edit_post_path(post.id), data: {confirm: "#{index + 1} の呟きを編集しますか？"} %></td>
-     <td><%= link_to "削除する", post_path(post.id), data: {confirm: "#{index + 1} の呟きを本当に削除してもよろしいですか？"}, method: :delete %></td>
+     <td><%= link_to "確認する", post_path(post.id), data: {confirm: "#{index + 1} のツブヤキを確認しますか？"} %></td>
+     <td><%= link_to "編集する", edit_post_path(post.id), data: {confirm: "#{index + 1} のツブヤキを編集しますか？"} %></td>
+     <td><%= link_to "削除する", post_path(post.id), data: {confirm: "#{index + 1} のツブヤキを本当に削除してもよろしいですか？"}, method: :delete %></td>
   </tr>
 <% end %>
 </table>

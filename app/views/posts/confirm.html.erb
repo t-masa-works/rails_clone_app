@@ -1,6 +1,6 @@
 <% content_for(:title, 'ツブヤイターする？') %>
 <h1>以下の内容でつぶやきます</h1>
-
+<div class="confirm-container">
 <%= form_with(model:@post, local:true) do |form| %>
 	<%= form.hidden_field :content %>
 
@@ -8,3 +8,4 @@
   <%= form.submit "つぶやきを登録する" %>
 	<%= form.submit "つぶやかずに戻る", name: 'back' %>
 <% end %>
+</div>

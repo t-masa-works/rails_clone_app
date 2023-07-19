@@ -1,20 +1,20 @@
 <%= form_with(model:@post,local:true, url: choose_new_or_edit) do |form| %>
   <% if @post.errors.any? %>
-     <div id="error_explanation">
       <h2><%= @post.errors.count %>件のエラーがあります。</h2>
-      <ul>
+      <ul style="text-align:center">
          <% @post.errors.full_messages.each do |msg| %>
-           <li><%= msg %></li>
+           <li style="display: inline"><%= msg %></li>
          <% end %>
       </ul>
   <% end %>
      </div>
+  <div class="form-container">
   <div class="post_title">
-     <%= form.label :content %></br>
+     <%= form.label :content, "ツブヤキ" %></br>
   </div>
   <div class="post_content">
      <%= form.text_area :content %>
   </div>
-  <%= form.submit "呟きを保存する", data: {confirm: "本当に保存してもいいですか？"}%>
+  <%= form.submit "ツブヤキを保存する", data: {confirm: "本当に保存してもいいですか？"} %>
   <%= link_to "一覧に戻る", posts_path %>
 <% end %>

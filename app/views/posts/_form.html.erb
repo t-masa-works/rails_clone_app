@@ -7,8 +7,7 @@
          <% end %>
       </ul>
   <% end %>
-     </div>
-  <div class="form-container">
+  <div class="sub-container">
   <div class="post_title">
      <%= form.label :content, "ツブヤキ" %></br>
   </div>
@@ -17,4 +16,5 @@
   </div>
   <%= form.submit "ツブヤキを保存する", data: {confirm: "本当に保存してもいいですか？"} %>
   <%= link_to "一覧に戻る", posts_path %>
+  </div>
 <% end %>

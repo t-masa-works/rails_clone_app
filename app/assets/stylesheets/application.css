@@ -14,19 +14,34 @@
  *= require_self
  */
 
+html{
+	height:100%;
+	margin:0;
+}
+
 body {
+	min-height:100%;
 	line-height: 2;
-	margin: 0;
+	margin:0;
+	background-image: url('/assets/空色の鳥.png');
+	background-size: cover;
+}
+
+.wrapper {
+	height:100%;
+	min-height: 100vh;
+	position: relative;
 }
 
 .container {
 	width: 100%;
 	height: 100%;
+
 }
 
 header {
   background-color: aqua;
-  height:80px;
+  height:110px;
 	width:100%;
   margin-top: 0;
 }
@@ -51,9 +66,15 @@ td {
 	border-bottom: solid 1px ;
 }
 
+.title {
+	font-size: 30px;
+	margin:0;
+}
+
 h1 {
-	margin-left:20px;
+	margin:0;
 	text-align: center;
+	padding-top: 10px;
 }
 
 h2 {
@@ -66,16 +87,17 @@ table {
 	margin:auto;
 }
 
-.form-container {
+.sub-container {
 	text-align: center;
 }
 
-.confirm-container {
-	text-align: center;
-}
 
 footer {
 	background-color: aqua;
-	height:80px;
+	height:60px;
 	width:100%;
+	bottom:0;
+	display: flex;
+	justify-content: center;
+	position: absolute;
 }

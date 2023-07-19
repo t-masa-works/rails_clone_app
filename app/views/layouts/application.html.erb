@@ -9,11 +9,13 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <body>
+  <div class="wrapper">
   <header>
     <section class="header">
     <div class="header-logo">
-      <%= image_tag '青い鳥.png', size: '80x80', alt: 'ロゴ' %>
+      <%= image_tag '青い鳥.png', size: '120x120', alt: 'ロゴ' %>
     </div>
 
     <div class="title">
@@ -21,20 +23,20 @@
     </div>
 
     <div class="header-logo">
-      <%= image_tag '青い鳥.png', size: '80x80', alt: 'ロゴ' %>
+      <%= image_tag '青い鳥.png', size: '120x120', alt: 'ロゴ' %>
     </div>
    </section>
+
   </header>
 
-  <section class="top">
-  <div class="top-title">
-
-  </div>
-  </section>
   <section class="contents">
     <%= yield %>
   </section>
+  
   <footer>
+    <div class="copyright">
+      <p>Copyright © t.masa All Rights Reserved.</p>
+    </div>
   </footer>
-  </body>
+  </div>
 </html>
